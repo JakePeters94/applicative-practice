@@ -6,7 +6,9 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  // Your code goes here...
+  const planetsWithLowMoons = data.planets.filter(planet => typeof planet.moonsCount === 'undefined' || planet.moonsCount < 10);
+  const planetNamesWithLowMoons = planetsWithLowMoons.map(planet => planet.name);
+  return planetNamesWithLowMoons;
 }
 
 // === TEST YOURSELF ===
